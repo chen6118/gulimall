@@ -16,7 +16,7 @@ public class GulimallCouponApplication {
 	}
 	@RestController
 	class EchoController {
-		@GetMapping(value = "/echo/{string}")
+		@GetMapping(value = "/coupon/{string}")
 		public String echo(@PathVariable String string) {
 			return string;
 		}
