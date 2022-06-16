@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-14 11:12:55
+ * @date 2022-06-16 09:49:56
  */
 public interface PurchaseDetailService extends IService<PurchaseDetailEntity> {
 

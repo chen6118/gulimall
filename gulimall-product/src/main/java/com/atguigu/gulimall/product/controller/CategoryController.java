@@ -23,7 +23,7 @@ import com.atguigu.common.utils.R;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-08 15:03:26
+ * @date 2022-06-16 09:45:15
  */
 @RestController
 @RequestMapping("product/category")
@@ -45,9 +45,9 @@ public class CategoryController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id){
-		CategoryEntity category = categoryService.getById(id);
+    @RequestMapping("/info/{catId}")
+    public R info(@PathVariable("catId") Long catId){
+		CategoryEntity category = categoryService.getById(catId);
 
         return R.ok().put("category", category);
     }
@@ -56,7 +56,6 @@ public class CategoryController {
      * 保存
      */
     @RequestMapping("/save")
-
     public R save(@RequestBody CategoryEntity category){
 		categoryService.save(category);
 
@@ -77,8 +76,8 @@ public class CategoryController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids){
-		categoryService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] catIds){
+		categoryService.removeByIds(Arrays.asList(catIds));
 
         return R.ok();
     }

@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 
-import com.atguigu.common.utils.PageUtils;
-import com.atguigu.common.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.atguigu.gulimall.product.entity.AttrEntity;
 import com.atguigu.gulimall.product.service.AttrService;
-
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.R;
 
 
 
@@ -24,7 +23,7 @@ import com.atguigu.gulimall.product.service.AttrService;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-08 15:03:26
+ * @date 2022-06-16 09:45:15
  */
 @RestController
 @RequestMapping("product/attr")
@@ -46,9 +45,9 @@ public class AttrController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id){
-		AttrEntity attr = attrService.getById(id);
+    @RequestMapping("/info/{attrId}")
+    public R info(@PathVariable("attrId") Long attrId){
+		AttrEntity attr = attrService.getById(attrId);
 
         return R.ok().put("attr", attr);
     }
@@ -77,8 +76,8 @@ public class AttrController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids){
-		attrService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] attrIds){
+		attrService.removeByIds(Arrays.asList(attrIds));
 
         return R.ok();
     }

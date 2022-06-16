@@ -4,8 +4,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 
-import com.atguigu.common.utils.PageUtils;
-import com.atguigu.common.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.atguigu.gulimall.coupon.entity.CouponEntity;
 import com.atguigu.gulimall.coupon.service.CouponService;
-
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.R;
 
 
 
@@ -24,17 +23,13 @@ import com.atguigu.gulimall.coupon.service.CouponService;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-13 10:35:19
+ * @date 2022-06-16 09:31:39
  */
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
-
-
-
-
 
     /**
      * 列表

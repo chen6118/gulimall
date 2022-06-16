@@ -185,7 +185,7 @@
         label="收货电话">
       </el-table-column>
       <el-table-column
-        prop="receiveAddress"
+        prop="companyAddress"
         header-align="center"
         align="center"
         label="公司收货地址">

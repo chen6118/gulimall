@@ -23,7 +23,7 @@ import com.atguigu.common.utils.R;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-08 15:03:26
+ * @date 2022-06-16 09:45:15
  */
 @RestController
 @RequestMapping("product/commentreplay")
@@ -35,7 +35,6 @@ public class CommentReplayController {
      * 列表
      */
     @RequestMapping("/list")
-
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = commentReplayService.queryPage(params);
 
@@ -47,7 +46,6 @@ public class CommentReplayController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-
     public R info(@PathVariable("id") Long id){
 		CommentReplayEntity commentReplay = commentReplayService.getById(id);
 
@@ -58,7 +56,6 @@ public class CommentReplayController {
      * 保存
      */
     @RequestMapping("/save")
-
     public R save(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.save(commentReplay);
 
@@ -69,7 +66,6 @@ public class CommentReplayController {
      * 修改
      */
     @RequestMapping("/update")
-
     public R update(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.updateById(commentReplay);
 

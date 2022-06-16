@@ -23,13 +23,13 @@
         width="50">
       </el-table-column>
       <el-table-column
-        prop="id"
+        prop="attrId"
         header-align="center"
         align="center"
         label="属性id">
       </el-table-column>
       <el-table-column
-        prop="name"
+        prop="attrName"
         header-align="center"
         align="center"
         label="属性名">
@@ -53,7 +53,7 @@
         label="可选值列表[用逗号分隔]">
       </el-table-column>
       <el-table-column
-        prop="type"
+        prop="attrType"
         header-align="center"
         align="center"
         label="属性类型[0-销售属性，1-基本属性，2-既是销售属性又是基本属性]">
@@ -65,22 +65,16 @@
         label="启用状态[0 - 禁用，1 - 启用]">
       </el-table-column>
       <el-table-column
-        prop="showDesc"
-        header-align="center"
-        align="center"
-        label="快速展示【是否展示在介绍上；0-否 1-是】，在sku中仍然可以调整">
-      </el-table-column>
-      <el-table-column
-        prop="categoryId"
+        prop="catelogId"
         header-align="center"
         align="center"
         label="所属分类">
       </el-table-column>
       <el-table-column
-        prop="groupId"
+        prop="showDesc"
         header-align="center"
         align="center"
-        label="规格分组id">
+        label="快速展示【是否展示在介绍上；0-否 1-是】，在sku中仍然可以调整">
       </el-table-column>
       <el-table-column
         fixed="right"
@@ -89,8 +83,8 @@
         width="150"
         label="操作">
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.id)">修改</el-button>
-          <el-button type="text" size="small" @click="deleteHandle(scope.row.id)">删除</el-button>
+          <el-button type="text" size="small" @click="addOrUpdateHandle(scope.row.attrId)">修改</el-button>
+          <el-button type="text" size="small" @click="deleteHandle(scope.row.attrId)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -179,7 +173,7 @@
       // 删除
       deleteHandle (id) {
         var ids = id ? [id] : this.dataListSelections.map(item => {
-          return item.id
+          return item.attrId
         })
         this.$confirm(`确定对[id=${ids.join(',')}]进行[${id ? '删除' : '批量删除'}]操作?`, '提示', {
           confirmButtonText: '确定',

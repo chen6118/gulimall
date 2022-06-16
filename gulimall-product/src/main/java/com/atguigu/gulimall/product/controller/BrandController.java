@@ -3,6 +3,7 @@ package com.atguigu.gulimall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ import com.atguigu.common.utils.R;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-08 15:03:26
+ * @date 2022-06-16 09:45:15
  */
 @RestController
 @RequestMapping("product/brand")
@@ -34,7 +35,6 @@ public class BrandController {
      * 列表
      */
     @RequestMapping("/list")
-
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = brandService.queryPage(params);
 
@@ -45,10 +45,9 @@ public class BrandController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
-
-    public R info(@PathVariable("id") Long id){
-		BrandEntity brand = brandService.getById(id);
+    @RequestMapping("/info/{brandId}")
+    public R info(@PathVariable("brandId") Long brandId){
+		BrandEntity brand = brandService.getById(brandId);
 
         return R.ok().put("brand", brand);
     }
@@ -57,7 +56,6 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-
     public R save(@RequestBody BrandEntity brand){
 		brandService.save(brand);
 
@@ -68,7 +66,6 @@ public class BrandController {
      * 修改
      */
     @RequestMapping("/update")
-
     public R update(@RequestBody BrandEntity brand){
 		brandService.updateById(brand);
 
@@ -79,9 +76,8 @@ public class BrandController {
      * 删除
      */
     @RequestMapping("/delete")
-
-    public R delete(@RequestBody Long[] ids){
-		brandService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] brandIds){
+		brandService.removeByIds(Arrays.asList(brandIds));
 
         return R.ok();
     }

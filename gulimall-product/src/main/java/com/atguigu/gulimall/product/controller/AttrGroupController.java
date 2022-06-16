@@ -3,7 +3,7 @@ package com.atguigu.gulimall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import com.atguigu.common.utils.R;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.atguigu.gulimall.product.entity.AttrGroupEntity;
 import com.atguigu.gulimall.product.service.AttrGroupService;
 import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.R;
 
 
 
@@ -22,7 +23,7 @@ import com.atguigu.common.utils.PageUtils;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-08 15:03:26
+ * @date 2022-06-16 09:45:15
  */
 @RestController
 @RequestMapping("product/attrgroup")
@@ -44,9 +45,9 @@ public class AttrGroupController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
-    public R info(@PathVariable("id") Long id){
-		AttrGroupEntity attrGroup = attrGroupService.getById(id);
+    @RequestMapping("/info/{attrGroupId}")
+    public R info(@PathVariable("attrGroupId") Long attrGroupId){
+		AttrGroupEntity attrGroup = attrGroupService.getById(attrGroupId);
 
         return R.ok().put("attrGroup", attrGroup);
     }
@@ -75,8 +76,8 @@ public class AttrGroupController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Long[] ids){
-		attrGroupService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] attrGroupIds){
+		attrGroupService.removeByIds(Arrays.asList(attrGroupIds));
 
         return R.ok();
     }

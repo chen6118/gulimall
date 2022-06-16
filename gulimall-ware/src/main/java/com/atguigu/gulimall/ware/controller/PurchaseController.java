@@ -23,7 +23,7 @@ import com.atguigu.common.utils.R;
  *
  * @author CY
  * @email 1186378157@gmail.com
- * @date 2022-06-14 11:12:55
+ * @date 2022-06-16 09:49:56
  */
 @RestController
 @RequestMapping("ware/purchase")
