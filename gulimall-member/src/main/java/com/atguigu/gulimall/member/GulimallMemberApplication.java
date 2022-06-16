@@ -1,5 +1,6 @@
 package com.atguigu.gulimall.member;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableFeignClients(basePackages="com.atguigu.gulimall.member.fegin")//扫描接口方法注解
 @EnableDiscoveryClient// 注册到nacos
 @SpringBootApplication
+@MapperScan("com.atguigu.gulimall.member.dao")
 public class GulimallMemberApplication {
 
 	public static void main(String[] args) {
