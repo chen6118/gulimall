@@ -41,11 +41,13 @@ public class R extends HashMap<String, Object> {
 		return r;
 	}
 
+	// ok是个静态方法，new了一个R对象，并且
 	public static R ok(String msg) {
 		R r = new R();
-		r.put("msg", msg);
+		r.put("msg", msg);//调用了super.put(key, value);，即hashmap的put
 		return r;
 	}
+
 	
 	public static R ok(Map<String, Object> map) {
 		R r = new R();

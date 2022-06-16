@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 	2.2 要调用coupon服务的/coupon/coupon/member/list方法
  * 3 开启远程调用功能 @EnableFeignClients，要指定远程调用功能放的基础包
  * */
-//@EnableFeignClients(basePackages="com.atguigu.gulimall.member.feign")//扫描接口方法注解
+@EnableFeignClients(basePackages="com.atguigu.gulimall.member.fegin")//扫描接口方法注解
 @EnableDiscoveryClient// 注册到nacos
 @SpringBootApplication
 public class GulimallMemberApplication {
